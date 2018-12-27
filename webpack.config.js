@@ -94,6 +94,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: './src/view/index.html',
+            filename:'view/index.html',
             favicon: './favicon.ico'
         }),
         //单独打包css文件
