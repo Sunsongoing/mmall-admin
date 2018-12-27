@@ -15,7 +15,7 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'js/app.js',
         //访问路径
-        publicPath: WEBPACK_ENV == 'dev' ? '/dist/' : 's.zjlssr.xyz/mmall-admin/dist/',
+        publicPath: WEBPACK_ENV == 'dev' ? '/dist/' : '//s.zjlssr.xyz/mmall-admin/dist/',
     },
     //配置别名
     resolve: {
