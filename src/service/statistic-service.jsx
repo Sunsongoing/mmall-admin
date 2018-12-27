@@ -6,7 +6,7 @@ class Statistic {
     // 首页数据统计
     getHomeCount() {
         return _util.request({
-            url: '/manage/statistic/base_count'
+            url: _util.getServerUrl('/manage/statistic/base_count')
         });
     }
 }

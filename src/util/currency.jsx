@@ -33,6 +33,10 @@ class MUtil {
     doLogin() {
         window.location.href = '/login?redirect=' + encodeURIComponent(window.location.pathname);
     }
+    //获取服务器地址
+    getServerUrl(path) {
+        return "mmall" + path;
+    }
     // 获取url参数
     getUrlParam() {
         // param=123&param1=222

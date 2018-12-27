@@ -7,7 +7,7 @@ class User {
     login(loginInfo) {
         return _util.request({
             type: 'post',
-            url: '/manage/user/login',
+            url:_util.getServerUrl('/manage/user/login'),
             data: loginInfo
         });
     }
@@ -40,14 +40,14 @@ class User {
     logout() {
         return _util.request({
             type: 'post',
-            url: '/user/logout',
+            url:_util.getServerUrl('/user/logout'),
         });
     }
     // 获取用户列表
     getUserList(pageNum) {
         return _util.request({
             type: 'post',
-            url: '/manage/user/list',
+            url:_util.getServerUrl('/manage/user/list'),
             data: {
                 pageNum: pageNum
             }

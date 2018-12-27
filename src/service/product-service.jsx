@@ -8,10 +8,10 @@ class Product {
         let url = '',
             data = {};
         if (listParam.listType === 'list') {
-            url = '/manage/product/list';
+            url = _util.getServerUrl('/manage/product/list');
             data.pageNum = listParam.pageNum;
         } else if (listParam.listType === 'searchType') {
-            url = '/manage/product/search';
+            url = _util.getServerUrl('/manage/product/search');
             data.pageNum = listParam.pageNum;
             data[listParam.searchType] = listParam.keyword;
         }
@@ -25,7 +25,7 @@ class Product {
     getProduct(productId) {
         return _util.request({
             type: 'post',
-            url: '/manage/product/detail',
+            url: _util.getServerUrl('/manage/product/detail'),
             data: {
                 productId: productId || 0
             }
@@ -36,7 +36,7 @@ class Product {
         return _util.request({
             type: 'post',
             data: produtInfo,
-            url: '/manage/product/set_sale_status',
+            url: _util.getServerUrl('/manage/product/set_sale_status'),
         });
     }
     // 检查保存商品表单的数据
@@ -87,7 +87,7 @@ class Product {
         return _util.request({
             type: 'post',
             data: product,
-            url: '/manage/product/product_save',
+            url: _util.getServerUrl('/manage/product/product_save'),
         });
     }
     //==================== 商品品类相关================
@@ -98,7 +98,7 @@ class Product {
             data: {
                 categoryId: parentCategoryId
             },
-            url: '/manage/category/get_category',
+            url: _util.getServerUrl('/manage/category/get_category'),
         });
     }
     // 修改品类名称
@@ -106,7 +106,7 @@ class Product {
         return _util.request({
             type: 'post',
             data: categoryInfo,
-            url: '/manage/category/set_category_name'
+            url: _util.getServerUrl('/manage/category/set_category_name')
         });
     }
     // 添加品类
@@ -114,7 +114,7 @@ class Product {
         return _util.request({
             type: 'post',
             data: category,
-            url: '/manage/category/add_category'
+            url: _util.getServerUrl('/manage/category/add_category')
         });
     }
 }
