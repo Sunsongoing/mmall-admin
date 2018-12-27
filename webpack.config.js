@@ -3,6 +3,8 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractextPlugin = require('extract-text-webpack-plugin');
 
+let WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev';
+
 module.exports = {
     //入口
     entry: {
@@ -13,7 +15,7 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'js/app.js',
         //访问路径
-        publicPath: '/dist/',
+        publicPath: WEBPACK_ENV == 'dev' ? '/dist/' : 's.zjlssr.xyz/mmall-admin/dist/',
     },
     //配置别名
     resolve: {

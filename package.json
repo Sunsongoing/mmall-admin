@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start:dev": "node_modules/.bin/webpack-dev-server --hot",
-    "dist": "node_modules/.bin/webpack -p --progress --colors"
+    "dist": "WEBPACK_ENV=production node_modules/.bin/webpack -p --progress --colors",
+    "dist_win": "set WEBPACK_ENV=production && node_modules/.bin/webpack -p --progress --colors"
   },
   "devDependencies": {
     "babel-core": "6.26.0",
