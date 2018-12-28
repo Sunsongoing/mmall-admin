@@ -18,7 +18,7 @@ class Order {
         return _util.request({
             type: 'post',
             data: data,
-            url: url
+            url: _util.getServerUrl(url)
         });
     }
     // 获取订单详情
@@ -28,7 +28,7 @@ class Order {
             data: {
                 orderNo: orderNo
             },
-            url: "/manage/order/detail"
+            url: _util.getServerUrl("/manage/order/detail")
         });
     }
     // 订单发货
@@ -38,7 +38,7 @@ class Order {
             data: {
                 orderNo: orderNo
             },
-            url: "/manage/order/send_goods"
+            url: _util.getServerUrl("/manage/order/send_goods")
         });
     }
 
